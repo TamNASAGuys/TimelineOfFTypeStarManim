@@ -6,6 +6,6 @@ This project uses the Manim library to Simulation Star. This is similar redstar2
 
 To run this project, you will need to have the following installed:
 
-- Python 3.9 or higher
-- Manim
+- ManimCE run Python 3.9 or higher
 - MikTex if Windows
+- Numpy
