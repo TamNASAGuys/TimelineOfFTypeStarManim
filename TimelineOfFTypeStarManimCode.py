@@ -1230,7 +1230,6 @@ class TimelineWhiteDwarf(ZoomedScene):
         no_light_Scipli.set_opacity(0.8)
         no_light_Enecune.set_opacity(0.92)
         self.wait(5) # 30 By
-        self.wait(1/config.frame_rate)
 
         ## CLEAR
         t.clear_updaters()
