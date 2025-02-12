@@ -11,4 +11,4 @@ To run this project, you will need to have the following installed:
 - Numpy
 
 ## Known Issue
-When render. Manim doesnt play first and last frame when using self.wait
+When render. It doesnt play first and last frame when using self.wait
