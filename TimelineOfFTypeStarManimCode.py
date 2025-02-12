@@ -71,9 +71,9 @@ class StarSelection(Scene): # similar AstroCat or Dogepro
         self.play(arrow_select.animate.next_to(star_f_base,UP),run_time=1/6,rate_func=linear)
         self.wait(0.5)
         arrow_select.set_fill(GRAY,opacity=1)
+        self.wait(0.25)
         #self.add_sound("snd_squeak.wav")
         #self.add_sound("ohyes.mp3")
-        self.wait(0.25)
         self.remove(star_o,star_b,star_a,star_f,star_g,star_k,star_m,arrow_select)
         for i in range(len(star_spectral_type)):
             self.remove(star_spectral_type[i])
