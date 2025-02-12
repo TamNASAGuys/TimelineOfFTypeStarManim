@@ -956,7 +956,7 @@ class TimelineRedGiant(ZoomedScene):
 
         ## COMPARSION EARTH AND WHITE DWARF
         self.camera.frame.shift(3*UP)
-        earth = SVGMobject("manim\img\earth.svg").shift(UP+2*LEFT)
+        earth = SVGMobject("img\earth.svg").shift(UP+2*LEFT)
         Fertumi_white_dwarf_base = Dot(radius=1.429,fill_color=ManimColor.from_rgb((170, 198, 255)))
         Fertumi_white_dwarf_glow = create_glow(Fertumi_white_dwarf_base,rad=1.429*3,col=ManimColor.from_rgb((170, 198, 255)))
         Fertumi_white_dwarf = VGroup(Fertumi_white_dwarf_base,Fertumi_white_dwarf_glow).shift(1.429*UP+2*RIGHT)
