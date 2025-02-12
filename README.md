@@ -1,6 +1,6 @@
 # Timeline of an F-Type Star
 
-This project uses the Manim library to Simulation Star. This is similar redstar229
+This uses the Manim library to Simulation Star with planet. That's similar redstar229
 
 ## Requirements
 
@@ -9,3 +9,6 @@ To run this project, you will need to have the following installed:
 - ManimCE run Python 3.9 or higher
 - MikTex if Windows
 - Numpy
+
+## Known Issue
+When render. Manim doesnt play first and last frame when using self.wait
