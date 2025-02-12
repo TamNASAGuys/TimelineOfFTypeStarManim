@@ -468,7 +468,7 @@ class TimelineMainSequence(ZoomedScene):
         self.add(Scipli_Wiki)
         self.wait(4)
         self.play(FadeOut(Scipli_Wiki))
-        self.play(self.camera.frame.animate.scale(0.91578).move_to([27,0.734*3,0]),Scipli_Wiki_Comparsion.animate.shift(10*LEFT))
+        self.play(self.camera.frame.animate.scale(0.91578).move_to([27,0.734*3,0]),Scipli_Wiki_Comparsion.animate.shift(10*LEFT)) # zoom 0.7339x out
         self.wait(0.5)
         self.add(Enecune_Wiki)
         self.wait(4)
