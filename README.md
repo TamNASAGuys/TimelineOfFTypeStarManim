@@ -7,7 +7,7 @@ This uses the Manim library to Simulation Star with planet. That's similar redst
 To run this project, you will need to have the following installed:
 
 - ManimCE run Python 3.9 or higher
-- MikTex if Windows
+- Latex
 - Numpy
 
 ## Known Issue
