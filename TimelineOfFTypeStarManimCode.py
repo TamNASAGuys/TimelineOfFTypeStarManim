@@ -99,7 +99,7 @@ class StarSelection(Scene): # similar AstroCat or Dogepro
         self.wait(0.2)
         self.add(star_mass[8:9])
         self.wait(0.2)
-        self.add(star_mass[9:12])
+        self.add(star_mass[9:])
         self.wait()
         self.play(star_names.animate.scale(1.5).set_opacity(0),star_mass.animate.scale(1.5).set_opacity(0),run_time=2,rate_functions=linear)
         self.remove(star_names,star_mass,star_f)
