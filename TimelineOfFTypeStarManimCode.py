@@ -1283,7 +1283,7 @@ class Comparsion(ZoomedScene):
 
 class TemperatureToRGB(Scene):
     def construct(self):
-        temp = ValueTracker(1500)
+        temp = ValueTracker(1000)
         def color(): # We cant use variable now become it not update
             temperature = temp.get_value() / 100
             if (temp.get_value() / 100) >= 67:
