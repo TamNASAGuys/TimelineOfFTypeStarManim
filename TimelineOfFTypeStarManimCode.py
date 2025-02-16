@@ -148,7 +148,7 @@ class TimelineMainSequence(ZoomedScene):
             if t.get_value() <= -2e7:
                 return 59.86311
             elif -2e7 < t.get_value() <= 0:
-                return 0.89 + np.exp(4.077-(time/1e6+20)) + np.exp(time/3e6+1.33) # 0.89 + e^(4.077-t/1e6 + 20)
+                return 0.89 + np.exp(4.077-(time/1e6+20)) + np.exp(time/3e6+1.33)
             elif 0 < t.get_value() <= 2.8e9:
                 return 4.67 + (1.48 ** 3.5)*1e-10*3.21*time
             elif 2.8e9 < t.get_value() <= 2.85e9:
@@ -190,7 +190,7 @@ class TimelineMainSequence(ZoomedScene):
             if t.get_value() <= -2e7:
                 return 15.749731
             elif -2e7 < t.get_value() <= 0:
-                return 0.87 + np.exp(-17.3-(time/1e6)) + np.exp(time/1e7-0.6) # 0.89 + e^(4.077-t/1e6 + 20)
+                return 0.87 + np.exp(-17.3-(time/1e6)) + np.exp(time/1e7-0.6)
             elif 0 < t.get_value() <= 2.8e9:
                 return 1.4188 * np.exp(time/5.4e9)
             elif 2.8e9 < t.get_value() <= 2.85e9:
@@ -227,7 +227,7 @@ class TimelineMainSequence(ZoomedScene):
             return 5778*np.power(luminosity()/radius()**2,1./4)
         def color(): # Temperature to RGB and code from https://tannerhelland.com/2012/09/18/convert-temperature-rgb-algorithm-code.html
             temp = temperature() / 100
-            if (temperature() / 100) >= 67:
+            if temp >= 67:
                 r = 329.698727446046 * (temp-60)**-0.133204759227737
                 g = 288.122169528293 * (temp-60)**-0.0755148492418579
                 b = 255
@@ -239,9 +239,9 @@ class TimelineMainSequence(ZoomedScene):
                 r = 255    
                 g = 99.4708025861262 * np.log(temp) - 161.119568166068
                 g = min(max(0, g), 255)
-                if (temperature() / 100) < 20:
+                if temp < 20:
                     b = 0
-                elif  20 <= (temperature() / 100) <= 67:
+                elif  20 <= temp <= 67:
                     b = 138.517761556144 * np.log(temp-10) - 305.044792730681
                     b = min(max(0, b), 255)
             return int(r),int(g),int(b)        
@@ -345,7 +345,6 @@ class TimelineMainSequence(ZoomedScene):
         self.add(Mate,Mate_info_text)
         self.wait(1.6) #0 My
         self.add(Scipli_orbit,Enecune_orbit)
-        rotate_deg.add_updater(lambda mob,dt: mob.increment_value(-20*dt))
         self.add(mass_text,mass_num,lum_num,lum_text,temperature_text,temperature_num,radius_num,radius_text)
         begin_nuclear_fusion = Text("begin thermonuclear fusion in Fertumi core",font="NewComputerModern10").scale(3).next_to(sq_info[3],RIGHT,buff=1)
         self.add(begin_nuclear_fusion)
@@ -616,7 +615,7 @@ class TimelineRedGiant(ZoomedScene):
             if t.get_value() <= -2e7:
                 return 59.86311
             elif -2e7 < t.get_value() <= 0:
-                return 0.89 + np.exp(4.077-(time/1e6+20)) + np.exp(time/3e6+1.33) # 0.89 + e^(4.077-t/1e6 + 20)
+                return 0.89 + np.exp(4.077-(time/1e6+20)) + np.exp(time/3e6+1.33)
             elif 0 < t.get_value() <= 2.8e9:
                 return 4.67 + (1.48 ** 3.5)*1e-10*3.21*time
             elif 2.8e9 < t.get_value() <= 2.85e9:
@@ -658,7 +657,7 @@ class TimelineRedGiant(ZoomedScene):
             if t.get_value() <= -2e7:
                 return 15.749731
             elif -2e7 < t.get_value() <= 0:
-                return 0.87 + np.exp(-17.3-(time/1e6)) + np.exp(time/1e7-0.6) # 0.89 + e^(4.077-t/1e6 + 20)
+                return 0.87 + np.exp(-17.3-(time/1e6)) + np.exp(time/1e7-0.6)
             elif 0 < t.get_value() <= 2.8e9:
                 return 1.4188 * np.exp(time/5.4e9)
             elif 2.8e9 < t.get_value() <= 2.85e9:
@@ -695,7 +694,7 @@ class TimelineRedGiant(ZoomedScene):
             return 5778*np.power(luminosity()/radius()**2,1./4)
         def color(): # Temperature to RGB and code from https://tannerhelland.com/2012/09/18/convert-temperature-rgb-algorithm-code.html
             temp = temperature() / 100
-            if (temperature() / 100) >= 67:
+            if temp >= 67:
                 r = 329.698727446046 * (temp-60)**-0.133204759227737
                 g = 288.122169528293 * (temp-60)**-0.0755148492418579
                 b = 255
@@ -707,9 +706,9 @@ class TimelineRedGiant(ZoomedScene):
                 r = 255    
                 g = 99.4708025861262 * np.log(temp) - 161.119568166068
                 g = min(max(0, g), 255)
-                if (temperature() / 100) < 20:
+                if temp < 20:
                     b = 0
-                elif  20 <= (temperature() / 100) <= 67:
+                elif  20 <= temp <= 67:
                     b = 138.517761556144 * np.log(temp-10) - 305.044792730681
                     b = min(max(0, b), 255)
             return int(r),int(g),int(b)              
@@ -999,7 +998,7 @@ class TimelineWhiteDwarf(ZoomedScene):
             if t.get_value() <= -2e7:
                 return 59.86311
             elif -2e7 < t.get_value() <= 0:
-                return 0.89 + np.exp(4.077-(time/1e6+20)) + np.exp(time/3e6+1.33) # 0.89 + e^(4.077-t/1e6 + 20)
+                return 0.89 + np.exp(4.077-(time/1e6+20)) + np.exp(time/3e6+1.33)
             elif 0 < t.get_value() <= 2.8e9:
                 return 4.67 + (1.48 ** 3.5)*1e-10*3.21*time
             elif 2.8e9 < t.get_value() <= 2.85e9:
@@ -1040,7 +1039,7 @@ class TimelineWhiteDwarf(ZoomedScene):
             return 5778*np.power(luminosity()/0.0131**2,1./4)
         def color(): # Temperature to RGB and code from https://tannerhelland.com/2012/09/18/convert-temperature-rgb-algorithm-code.html
             temp = temperature() / 100
-            if (temperature() / 100) >= 67:
+            if temp >= 67:
                 r = 329.698727446046 * (temp-60)**-0.133204759227737
                 g = 288.122169528293 * (temp-60)**-0.0755148492418579
                 b = 255
@@ -1052,9 +1051,9 @@ class TimelineWhiteDwarf(ZoomedScene):
                 r = 255    
                 g = 99.4708025861262 * np.log(temp) - 161.119568166068
                 g = min(max(0, g), 255)
-                if (temperature() / 100) < 20:
+                if temp < 20:
                     b = 0
-                elif  20 <= (temperature() / 100) <= 67:
+                elif  20 <= temp <= 67:
                     b = 138.517761556144 * np.log(temp-10) - 305.044792730681
                     b = min(max(0, b), 255)
             return int(r),int(g),int(b)
@@ -1284,9 +1283,9 @@ class Comparsion(ZoomedScene):
 class TemperatureToRGB(Scene):
     def construct(self):
         temp = ValueTracker(1000)
-        def color(): # We cant use variable now become it not update
+        def color():
             temperature = temp.get_value() / 100
-            if (temp.get_value() / 100) >= 67:
+            if temperature >= 67:
                 r = 329.698727446046 * (temperature-60)**-0.133204759227737
                 g = 288.122169528293 * (temperature-60)**-0.0755148492418579
                 b = 255
@@ -1298,9 +1297,9 @@ class TemperatureToRGB(Scene):
                 r = 255    
                 g = 99.4708025861262 * np.log(temperature) - 161.119568166068
                 g = min(max(0, g), 255)
-                if (temp.get_value() / 100) < 20:
+                if temperature < 20:
                     b = 0
-                elif  20 <= (temp.get_value() / 100) <= 67:
+                elif  20 <= temperature <= 67:
                     b = 138.517761556144 * np.log(temperature-10) - 305.044792730681
                     b = min(max(0, b), 255)
             return int(r),int(g),int(b)        
