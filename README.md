@@ -10,4 +10,4 @@ To run this project, you will need to have the following installed:
 - Latex
 
 ## Known Issue
-When render. It doesnt play first and last frame when using `self.wait`
+When render. It doesnt play first and last frame when using `self.wait` or `self.play`
