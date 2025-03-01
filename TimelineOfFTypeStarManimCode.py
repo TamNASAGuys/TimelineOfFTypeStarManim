@@ -2,7 +2,7 @@ from manim import *
 import numpy as np
 
 # Total render time: 2-3 hours
-# There render time is depend how fast pc is
+# There render time is depend how fast pc is and proportional to fps
 # render time per part is 30-50 minutes
 # font used is new computer modern
 
