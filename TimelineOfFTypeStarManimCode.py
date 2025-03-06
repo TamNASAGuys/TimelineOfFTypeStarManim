@@ -926,15 +926,15 @@ class TimelineRedGiant(ZoomedScene):
 
         pulse_agb = [stellar_pulse(ORIGIN,rad=0.7816*1.07**i) for i in range(9)]
         self.add(pulse_agb[0])
-        pulse_agb[0].add_updater(lambda mob,dt: mob.scale(1.2))
+        pulse_agb[0].add_updater(lambda mob,dt: mob.scale(50000**dt))
         for i in range(7):
             self.wait(2) # 3205 My to 3205.7 My
             self.remove(pulse_agb[i])
             self.add(pulse_agb[i+1])
-            pulse_agb[i+1].add_updater(lambda mob,dt: mob.scale(1.2))
+            pulse_agb[i+1].add_updater(lambda mob,dt: mob.scale(50000**dt))
         self.remove(pulse_agb[7])
         self.add(pulse_agb[8])
-        pulse_agb[8].add_updater(lambda mob,dt: mob.scale(1.2)) 
+        pulse_agb[8].add_updater(lambda mob,dt: mob.scale(50000**dt)) 
         
         self.wait(4) # 3205.9 My
         self.remove(pulse_agb[8])
