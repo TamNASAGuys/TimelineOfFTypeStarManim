@@ -828,7 +828,7 @@ class TimelineRedGiant(ZoomedScene):
         self.wait(0.6) # 3078 My
         self.play(FadeOut(Mate_base_x,Mate_orbit,Mate_hot_glow_x_2200c,Mate_info_text_x,sq_info_x[1]),run_time=0.4) # 3080 My
         pulse_1 = stellar_pulse(ORIGIN,rad=0.5582)
-        pulse_1.add_updater(lambda mob,dt: mob.scale(1.2))
+        pulse_1.add_updater(lambda mob,dt: mob.scale(50000**dt))
         self.add(pulse_1,core_enough_temperature)
         self.wait(0.8) # 3084 My
         self.remove(pulse_1,Scipli_hot_glow_x_650c)
