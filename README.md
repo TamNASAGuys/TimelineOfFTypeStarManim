@@ -11,4 +11,5 @@ To run this project, you will need to have the following installed:
 
 ## Known Issue
 When render. It doesnt play first and last frame when using `self.wait` or `self.play` if only one animation <br>
-if more animation, it doesnt play last frame on ALL animation expect last. the last doesnt play first and last frame
+if more animation, it doesnt play last frame on ALL animation expect last. the last doesnt play first and last frame <br>
+also render speed is super slow so please be patient
